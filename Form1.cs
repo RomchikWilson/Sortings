@@ -54,16 +54,15 @@ namespace Sortings
 
             String temp;
 
-            // Sorting strings using bubble sort
-            for (int j = 0; j < n - 1; j++)
+            for (int i = 0; i < n; i++)
             {
-                for (int i = j + 1; i < n; i++)
+                for (int j = 0; j < n - 1; j++)
                 {
-                    if (arr[j].CompareTo(arr[i]) > 0)
+                    if (arr[j].CompareTo(arr[j + 1]) > 0)
                     {
-                        temp = arr[j].ToString();
-                        arr[j] = arr[i];
-                        arr[i] = temp;
+                        temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
 
                         textBox_Console.Text += $@"
 {string.Concat(arr)}";
