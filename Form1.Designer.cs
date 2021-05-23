@@ -35,12 +35,14 @@
             this.radioButton_BubbleSort = new System.Windows.Forms.RadioButton();
             this.groupBox_Types = new System.Windows.Forms.GroupBox();
             this.groupBox_Output = new System.Windows.Forms.GroupBox();
-            this.label_Console = new System.Windows.Forms.Label();
-            this.textBox_Answer = new System.Windows.Forms.TextBox();
             this.label_Answer = new System.Windows.Forms.Label();
+            this.textBox_Answer = new System.Windows.Forms.TextBox();
+            this.label_Console = new System.Windows.Forms.Label();
             this.groupBox_Input = new System.Windows.Forms.GroupBox();
-            this.button_Sort = new System.Windows.Forms.Button();
             this.label_IncomingData = new System.Windows.Forms.Label();
+            this.button_Sort = new System.Windows.Forms.Button();
+            this.radioButton_CombSort = new System.Windows.Forms.RadioButton();
+            this.radioButton_ShakerSort = new System.Windows.Forms.RadioButton();
             this.groupBox_Types.SuspendLayout();
             this.groupBox_Output.SuspendLayout();
             this.groupBox_Input.SuspendLayout();
@@ -85,7 +87,7 @@
             this.textBox_IncomingData.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox_IncomingData.MaxLength = 20;
             this.textBox_IncomingData.Name = "textBox_IncomingData";
-            this.textBox_IncomingData.Size = new System.Drawing.Size(301, 26);
+            this.textBox_IncomingData.Size = new System.Drawing.Size(301, 31);
             this.textBox_IncomingData.TabIndex = 2;
             this.textBox_IncomingData.Text = "12543689754682135964";
             this.textBox_IncomingData.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -99,7 +101,7 @@
             this.radioButton_BubbleSort.Location = new System.Drawing.Point(25, 38);
             this.radioButton_BubbleSort.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radioButton_BubbleSort.Name = "radioButton_BubbleSort";
-            this.radioButton_BubbleSort.Size = new System.Drawing.Size(70, 23);
+            this.radioButton_BubbleSort.Size = new System.Drawing.Size(85, 28);
             this.radioButton_BubbleSort.TabIndex = 3;
             this.radioButton_BubbleSort.TabStop = true;
             this.radioButton_BubbleSort.Text = "Bubble";
@@ -107,6 +109,8 @@
             // 
             // groupBox_Types
             // 
+            this.groupBox_Types.Controls.Add(this.radioButton_CombSort);
+            this.groupBox_Types.Controls.Add(this.radioButton_ShakerSort);
             this.groupBox_Types.Controls.Add(this.radioButton_BubbleSort);
             this.groupBox_Types.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox_Types.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -136,15 +140,15 @@
             this.groupBox_Output.TabStop = false;
             this.groupBox_Output.Text = "Output";
             // 
-            // label_Console
+            // label_Answer
             // 
-            this.label_Console.AutoSize = true;
-            this.label_Console.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_Console.Location = new System.Drawing.Point(6, 23);
-            this.label_Console.Name = "label_Console";
-            this.label_Console.Size = new System.Drawing.Size(57, 19);
-            this.label_Console.TabIndex = 1;
-            this.label_Console.Text = "Console";
+            this.label_Answer.AutoSize = true;
+            this.label_Answer.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_Answer.Location = new System.Drawing.Point(6, 428);
+            this.label_Answer.Name = "label_Answer";
+            this.label_Answer.Size = new System.Drawing.Size(70, 24);
+            this.label_Answer.TabIndex = 8;
+            this.label_Answer.Text = "Answer";
             // 
             // textBox_Answer
             // 
@@ -154,19 +158,19 @@
             this.textBox_Answer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox_Answer.MaxLength = 20;
             this.textBox_Answer.Name = "textBox_Answer";
-            this.textBox_Answer.Size = new System.Drawing.Size(393, 26);
+            this.textBox_Answer.Size = new System.Drawing.Size(393, 31);
             this.textBox_Answer.TabIndex = 7;
             this.textBox_Answer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label_Answer
+            // label_Console
             // 
-            this.label_Answer.AutoSize = true;
-            this.label_Answer.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_Answer.Location = new System.Drawing.Point(6, 428);
-            this.label_Answer.Name = "label_Answer";
-            this.label_Answer.Size = new System.Drawing.Size(57, 19);
-            this.label_Answer.TabIndex = 8;
-            this.label_Answer.Text = "Answer";
+            this.label_Console.AutoSize = true;
+            this.label_Console.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_Console.Location = new System.Drawing.Point(6, 23);
+            this.label_Console.Name = "label_Console";
+            this.label_Console.Size = new System.Drawing.Size(72, 24);
+            this.label_Console.TabIndex = 1;
+            this.label_Console.Text = "Console";
             // 
             // groupBox_Input
             // 
@@ -186,6 +190,16 @@
             this.groupBox_Input.TabStop = false;
             this.groupBox_Input.Text = "Input";
             // 
+            // label_IncomingData
+            // 
+            this.label_IncomingData.AutoSize = true;
+            this.label_IncomingData.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_IncomingData.Location = new System.Drawing.Point(6, 23);
+            this.label_IncomingData.Name = "label_IncomingData";
+            this.label_IncomingData.Size = new System.Drawing.Size(123, 24);
+            this.label_IncomingData.TabIndex = 9;
+            this.label_IncomingData.Text = "Incoming data";
+            // 
             // button_Sort
             // 
             this.button_Sort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -203,19 +217,35 @@
             this.button_Sort.UseVisualStyleBackColor = false;
             this.button_Sort.Click += new System.EventHandler(this.button_Sort_Click);
             // 
-            // label_IncomingData
+            // radioButton_CombSort
             // 
-            this.label_IncomingData.AutoSize = true;
-            this.label_IncomingData.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_IncomingData.Location = new System.Drawing.Point(6, 23);
-            this.label_IncomingData.Name = "label_IncomingData";
-            this.label_IncomingData.Size = new System.Drawing.Size(100, 19);
-            this.label_IncomingData.TabIndex = 9;
-            this.label_IncomingData.Text = "Incoming data";
+            this.radioButton_CombSort.AutoSize = true;
+            this.radioButton_CombSort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.radioButton_CombSort.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.radioButton_CombSort.Location = new System.Drawing.Point(25, 105);
+            this.radioButton_CombSort.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.radioButton_CombSort.Name = "radioButton_CombSort";
+            this.radioButton_CombSort.Size = new System.Drawing.Size(73, 28);
+            this.radioButton_CombSort.TabIndex = 7;
+            this.radioButton_CombSort.Text = "Comb";
+            this.radioButton_CombSort.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_ShakerSort
+            // 
+            this.radioButton_ShakerSort.AutoSize = true;
+            this.radioButton_ShakerSort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.radioButton_ShakerSort.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.radioButton_ShakerSort.Location = new System.Drawing.Point(25, 74);
+            this.radioButton_ShakerSort.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.radioButton_ShakerSort.Name = "radioButton_ShakerSort";
+            this.radioButton_ShakerSort.Size = new System.Drawing.Size(88, 28);
+            this.radioButton_ShakerSort.TabIndex = 6;
+            this.radioButton_ShakerSort.Text = "Shaker";
+            this.radioButton_ShakerSort.UseVisualStyleBackColor = true;
             // 
             // Sortings
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.ClientSize = new System.Drawing.Size(856, 506);
@@ -254,6 +284,8 @@
         private System.Windows.Forms.GroupBox groupBox_Input;
         private System.Windows.Forms.Button button_Sort;
         private System.Windows.Forms.Label label_IncomingData;
+        private System.Windows.Forms.RadioButton radioButton_CombSort;
+        private System.Windows.Forms.RadioButton radioButton_ShakerSort;
     }
 }
 
