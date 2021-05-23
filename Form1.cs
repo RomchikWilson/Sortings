@@ -19,10 +19,20 @@ namespace Sortings
 
         private void button_Sort_Click(object sender, EventArgs e)
         {
-            if (radioButton_BubbleSort.Checked) 
+            if (radioButton_BubbleSort.Checked)
             {
                 ClearAndFillWithInitialData("Bubble sorting");
                 BubbleSort();
+            }
+            else if (radioButton_ShakerSort.Checked)
+            {
+                ClearAndFillWithInitialData("Shaker sorting");
+                ShakerSort();
+            }
+            else if (radioButton_CombSort.Checked)
+            {
+                ClearAndFillWithInitialData("Comb sorting");
+                CombSort();
             }
         }
 
@@ -45,7 +55,7 @@ namespace Sortings
 
             string[] arr = new string[str.Length];
 
-            for (int k = 0; k < str.Length; k++) 
+            for (int k = 0; k < str.Length; k++)
             {
                 arr[k] = str[k].ToString();
             }
@@ -72,5 +82,119 @@ namespace Sortings
 
             textBox_Answer.Text = string.Concat(arr);
         }
+
+        private void ShakerSort()
+        {
+            string str = textBox_IncomingData.Text;
+
+            string[] arr = new string[str.Length];
+
+            for (int k = 0; k < str.Length; k++)
+            {
+                arr[k] = str[k].ToString();
+            }
+
+            bool isSwapped = true;
+            int start = 0;
+            int end = arr.Length;
+
+            while (isSwapped == true)
+            {
+                isSwapped = false;
+
+                for (int i = start; i < end - 1; ++i)
+                {
+                    if (arr[i].CompareTo(arr[i + 1]) > 0)
+                    {
+                        string temp = arr[i];
+                        arr[i] = arr[i + 1];
+                        arr[i + 1] = temp;
+                        isSwapped = true;
+
+                        textBox_Console.Text += $@"
+{string.Concat(arr)}";
+                    }
+                }
+
+                if (isSwapped == false)
+                    break;
+
+                isSwapped = false;
+
+                end = end - 1;
+
+                for (int i = end - 1; i >= start; i--)
+                {
+                    if (arr[i].CompareTo(arr[i + 1]) > 0)
+                    {
+                        string temp = arr[i];
+                        arr[i] = arr[i + 1];
+                        arr[i + 1] = temp;
+                        isSwapped = true;
+
+                        textBox_Console.Text += $@"
+{string.Concat(arr)}";
+                    }
+                }
+
+                start = start + 1;
+            }
+
+            textBox_Answer.Text = string.Concat(arr);
+        }
+
+        //CombSort (
+        private void CombSort()
+        {
+            string str = textBox_IncomingData.Text;
+
+            string[] arr = new string[str.Length];
+
+            for (int k = 0; k < str.Length; k++)
+            {
+                arr[k] = str[k].ToString();
+            }
+
+            int length = arr.Length;
+
+            int gap = length;
+
+            bool swapped = true;
+
+            while (gap != 1 || swapped == true)
+            {
+                gap = GetNextGap(gap);
+
+                swapped = false;
+
+                for (int i = 0; i < length - gap; i++)
+                {
+                    if (arr[i].CompareTo(arr[i + 1]) > 0)
+                    {
+                        string temp = arr[i];
+                        arr[i] = arr[i + gap];
+                        arr[i + gap] = temp;
+
+                        swapped = true;
+
+                        textBox_Console.Text += $@"
+{string.Concat(arr)}";
+                    }
+                }
+            }
+
+            textBox_Answer.Text = string.Concat(arr);
+        }
+
+        private int GetNextGap(int gap)
+        {
+            gap = (gap * 10) / 13;
+            if (gap < 1)
+            {
+                return 1;
+            }
+            return gap;
+        }
+        // ) CombSort 
     }
 }
