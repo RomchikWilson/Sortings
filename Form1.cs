@@ -34,6 +34,18 @@ namespace Sortings
                 ClearAndFillWithInitialData("Comb sorting");
                 CombSort();
             }
+            else if (radioButton_InsertionSort.Checked)
+            {
+                ClearAndFillWithInitialData("Insertion sorting");
+                InsertionSort();
+            }
+        }
+
+        private void radioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!((RadioButton)((ButtonBase)sender)).Checked) return;
+
+            pictureBox_Visualizator.Image = (Image)Properties.Resources.ResourceManager.GetObject(((ButtonBase)sender).Text);
         }
 
         private void ClearAndFillWithInitialData(string typeSorting)
@@ -185,7 +197,6 @@ namespace Sortings
 
             textBox_Answer.Text = string.Concat(arr);
         }
-
         private int GetNextGap(int gap)
         {
             gap = (gap * 10) / 13;
@@ -196,5 +207,37 @@ namespace Sortings
             return gap;
         }
         // ) CombSort 
+
+        private void InsertionSort()
+        {
+            string str = textBox_IncomingData.Text;
+
+            string[] arr = new string[str.Length];
+
+            int length = arr.Length;
+
+            for (int k = 0; k < length; k++)
+            {
+                arr[k] = str[k].ToString();
+            }
+
+            for (int i = 1; i < length; ++i)
+            {
+                string currentValue = arr[i];
+                int pointer = i - 1;
+
+                while (pointer >= 0 && arr[pointer].CompareTo(currentValue) > 0) 
+                {
+                    arr[pointer + 1] = arr[pointer];
+                    pointer = pointer - 1;
+                }
+                arr[pointer + 1] = currentValue;
+
+                textBox_Console.Text += $@"
+{string.Concat(arr)}";
+            }
+
+            textBox_Answer.Text = string.Concat(arr);
+        }
     }
 }

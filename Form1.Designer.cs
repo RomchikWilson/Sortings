@@ -34,6 +34,10 @@
             this.textBox_IncomingData = new System.Windows.Forms.TextBox();
             this.radioButton_BubbleSort = new System.Windows.Forms.RadioButton();
             this.groupBox_Types = new System.Windows.Forms.GroupBox();
+            this.radioButton_InsertionSort = new System.Windows.Forms.RadioButton();
+            this.pictureBox_Visualizator = new System.Windows.Forms.PictureBox();
+            this.radioButton_CombSort = new System.Windows.Forms.RadioButton();
+            this.radioButton_ShakerSort = new System.Windows.Forms.RadioButton();
             this.groupBox_Output = new System.Windows.Forms.GroupBox();
             this.label_Answer = new System.Windows.Forms.Label();
             this.textBox_Answer = new System.Windows.Forms.TextBox();
@@ -41,9 +45,8 @@
             this.groupBox_Input = new System.Windows.Forms.GroupBox();
             this.label_IncomingData = new System.Windows.Forms.Label();
             this.button_Sort = new System.Windows.Forms.Button();
-            this.radioButton_CombSort = new System.Windows.Forms.RadioButton();
-            this.radioButton_ShakerSort = new System.Windows.Forms.RadioButton();
             this.groupBox_Types.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Visualizator)).BeginInit();
             this.groupBox_Output.SuspendLayout();
             this.groupBox_Input.SuspendLayout();
             this.SuspendLayout();
@@ -106,9 +109,12 @@
             this.radioButton_BubbleSort.TabStop = true;
             this.radioButton_BubbleSort.Text = "Bubble";
             this.radioButton_BubbleSort.UseVisualStyleBackColor = true;
+            this.radioButton_BubbleSort.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // groupBox_Types
             // 
+            this.groupBox_Types.Controls.Add(this.radioButton_InsertionSort);
+            this.groupBox_Types.Controls.Add(this.pictureBox_Visualizator);
             this.groupBox_Types.Controls.Add(this.radioButton_CombSort);
             this.groupBox_Types.Controls.Add(this.radioButton_ShakerSort);
             this.groupBox_Types.Controls.Add(this.radioButton_BubbleSort);
@@ -122,6 +128,58 @@
             this.groupBox_Types.TabIndex = 4;
             this.groupBox_Types.TabStop = false;
             this.groupBox_Types.Text = "Types sorting";
+            // 
+            // radioButton_InsertionSort
+            // 
+            this.radioButton_InsertionSort.AutoSize = true;
+            this.radioButton_InsertionSort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.radioButton_InsertionSort.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.radioButton_InsertionSort.Location = new System.Drawing.Point(25, 130);
+            this.radioButton_InsertionSort.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.radioButton_InsertionSort.Name = "radioButton_InsertionSort";
+            this.radioButton_InsertionSort.Size = new System.Drawing.Size(105, 28);
+            this.radioButton_InsertionSort.TabIndex = 9;
+            this.radioButton_InsertionSort.Text = "Insertion";
+            this.radioButton_InsertionSort.UseVisualStyleBackColor = true;
+            this.radioButton_InsertionSort.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
+            // 
+            // pictureBox_Visualizator
+            // 
+            this.pictureBox_Visualizator.Image = global::Sortings.Properties.Resources.Bubble;
+            this.pictureBox_Visualizator.Location = new System.Drawing.Point(6, 197);
+            this.pictureBox_Visualizator.Name = "pictureBox_Visualizator";
+            this.pictureBox_Visualizator.Size = new System.Drawing.Size(389, 163);
+            this.pictureBox_Visualizator.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox_Visualizator.TabIndex = 8;
+            this.pictureBox_Visualizator.TabStop = false;
+            // 
+            // radioButton_CombSort
+            // 
+            this.radioButton_CombSort.AutoSize = true;
+            this.radioButton_CombSort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.radioButton_CombSort.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.radioButton_CombSort.Location = new System.Drawing.Point(25, 99);
+            this.radioButton_CombSort.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.radioButton_CombSort.Name = "radioButton_CombSort";
+            this.radioButton_CombSort.Size = new System.Drawing.Size(73, 28);
+            this.radioButton_CombSort.TabIndex = 7;
+            this.radioButton_CombSort.Text = "Comb";
+            this.radioButton_CombSort.UseVisualStyleBackColor = true;
+            this.radioButton_CombSort.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
+            // 
+            // radioButton_ShakerSort
+            // 
+            this.radioButton_ShakerSort.AutoSize = true;
+            this.radioButton_ShakerSort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.radioButton_ShakerSort.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.radioButton_ShakerSort.Location = new System.Drawing.Point(25, 68);
+            this.radioButton_ShakerSort.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.radioButton_ShakerSort.Name = "radioButton_ShakerSort";
+            this.radioButton_ShakerSort.Size = new System.Drawing.Size(88, 28);
+            this.radioButton_ShakerSort.TabIndex = 6;
+            this.radioButton_ShakerSort.Text = "Shaker";
+            this.radioButton_ShakerSort.UseVisualStyleBackColor = true;
+            this.radioButton_ShakerSort.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // groupBox_Output
             // 
@@ -217,32 +275,6 @@
             this.button_Sort.UseVisualStyleBackColor = false;
             this.button_Sort.Click += new System.EventHandler(this.button_Sort_Click);
             // 
-            // radioButton_CombSort
-            // 
-            this.radioButton_CombSort.AutoSize = true;
-            this.radioButton_CombSort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioButton_CombSort.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton_CombSort.Location = new System.Drawing.Point(25, 105);
-            this.radioButton_CombSort.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.radioButton_CombSort.Name = "radioButton_CombSort";
-            this.radioButton_CombSort.Size = new System.Drawing.Size(73, 28);
-            this.radioButton_CombSort.TabIndex = 7;
-            this.radioButton_CombSort.Text = "Comb";
-            this.radioButton_CombSort.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_ShakerSort
-            // 
-            this.radioButton_ShakerSort.AutoSize = true;
-            this.radioButton_ShakerSort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioButton_ShakerSort.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton_ShakerSort.Location = new System.Drawing.Point(25, 74);
-            this.radioButton_ShakerSort.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.radioButton_ShakerSort.Name = "radioButton_ShakerSort";
-            this.radioButton_ShakerSort.Size = new System.Drawing.Size(88, 28);
-            this.radioButton_ShakerSort.TabIndex = 6;
-            this.radioButton_ShakerSort.Text = "Shaker";
-            this.radioButton_ShakerSort.UseVisualStyleBackColor = true;
-            // 
             // Sortings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
@@ -262,6 +294,7 @@
             this.Text = "Sortings";
             this.groupBox_Types.ResumeLayout(false);
             this.groupBox_Types.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Visualizator)).EndInit();
             this.groupBox_Output.ResumeLayout(false);
             this.groupBox_Output.PerformLayout();
             this.groupBox_Input.ResumeLayout(false);
@@ -286,6 +319,8 @@
         private System.Windows.Forms.Label label_IncomingData;
         private System.Windows.Forms.RadioButton radioButton_CombSort;
         private System.Windows.Forms.RadioButton radioButton_ShakerSort;
+        private System.Windows.Forms.PictureBox pictureBox_Visualizator;
+        private System.Windows.Forms.RadioButton radioButton_InsertionSort;
     }
 }
 
