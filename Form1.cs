@@ -41,6 +41,19 @@ namespace Sortings
             }
         }
 
+        private void button_Random_Click(object sender, EventArgs e)
+        {
+            string symbols = "";
+
+            if (checkBox_Letters.Checked) symbols += "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm";
+
+            if (checkBox_Numbers.Checked) symbols += "1111222233334444555566667777888899990000";
+
+            if (String.IsNullOrWhiteSpace(symbols)) return;
+
+            textBox_IncomingData.Text = GenRandomString(symbols, textBox_IncomingData.MaxLength);
+        }
+
         private void radioButton_CheckedChanged(object sender, EventArgs e)
         {
             if (!((RadioButton)((ButtonBase)sender)).Checked) return;
@@ -59,6 +72,23 @@ namespace Sortings
 ║    Type sorting: {typeSorting}                         
 ╚════════════════════════════════════════════╝";
             textBox_Console.Text = textMsg;
+        }
+
+        private string GenRandomString(string Alphabet, int Length)
+        {
+            Random rnd = new Random();
+
+            StringBuilder sb = new StringBuilder(Length - 1);
+
+            int Position = 0;
+
+            for (int i = 0; i < Length; i++)
+            {
+                Position = rnd.Next(0, Alphabet.Length - 1);
+                sb.Append(Alphabet[Position]);
+            }
+
+            return sb.ToString();
         }
 
         private void BubbleSort()
